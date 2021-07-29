@@ -33,6 +33,8 @@ In order to hook the IP adress of the local web oage to a specific folder, we ca
 
 First do `cd /var/www`
 
+Inside the www directory, clone this git repository:
+`git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git`
 
 
 
