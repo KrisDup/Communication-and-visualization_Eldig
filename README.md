@@ -29,10 +29,15 @@ sudo service apache2 start
 The server is now accessible through a browser by typing `localhost` in the adress field, or by going to the directory through the following command ``` cd /var/www/html ```
 
 ### Clone repository
-First do ```cd /var/www```
+First do 
+```
+cd /var/www
+```
 
 Inside the www directory, clone this git repository:
-```git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git```
+```
+git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
+```
 
 ### Create a virtual host
 In order to hook the IP adress of the local web oage to a specific folder, we can create a **virtual host**.
