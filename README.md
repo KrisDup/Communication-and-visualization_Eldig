@@ -71,7 +71,8 @@ sudo mv Communication-and-visualization_Eldig [domain]
 Finally, we need to change the `DocumentRoot` directory of apache2 sites conf file to `[domain]`
 
 ```
-cd /etc/apache2/sites-available/000-default.conf
+cd /etc/apache2/sites-available
+sudo nano 000-default.conf
 ```
 Change the line `DocumentRoot` to `DocumentRoot /war/www/[domain]`
 
