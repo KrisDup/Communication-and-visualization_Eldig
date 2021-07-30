@@ -8,7 +8,7 @@ try:
                                  password=con_var[1],
                                  host=con_var[2],
                                  port=3306,
-                                 database=con_var[4])
+                                 database=con_var[3])
     
     #MAKE SURE THIS IS TRUE; IF NOT THEN IT WONT INSERT INTO TABLES
     connection.autocommit = True
@@ -24,7 +24,7 @@ query = f"CREATE TABLE login (id BIGINT AUTO INCREMENT, user_id BIGINT, user_nam
 
 
 try:
-    cursor.execute(query)
+    cur.execute(query)
     print("login table created")
 except mariadb.Error as e:
     print(f"Error: {e}")
