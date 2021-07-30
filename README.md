@@ -20,6 +20,9 @@ sudo apt upgrade
 Installed by running the following command
 ```
 sudo apt install apache2
+sudo apt install libapache2-mod-php
+sudo a2enmod php 
+sudo apt install php7.3-mysql
 ```
 Some flavours of linux require the user to actually start the server, which can be done by running:
 ```
@@ -76,6 +79,9 @@ sudo nano 000-default.conf
 ```
 Change the line `DocumentRoot` to `DocumentRoot /war/www/[domain]`
 
+The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
+```
+sudo nano /var/www/[domain]/connection.php
 
 
 
