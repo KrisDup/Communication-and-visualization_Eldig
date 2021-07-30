@@ -52,7 +52,9 @@ To create a VH, type
 ```
 sudo virtualhost [create | delete] [domain] [optional host_dir]
 ```
-Note that domain is the same as the server name. A directory with the same name as `[domain]` was created at `var/www/[domain]`. We can delete this now, but remember the domain name for later. Command for delete
+Note that domain is the same as the server name. A directory with the same name as `[domain]` was created at `var/www/[domain]`. We can delete this now, but remember the domain name for later.
+
+Now, delete the directory by doing
 ```
 sudo rm -r var/www/[domain]
 ```
