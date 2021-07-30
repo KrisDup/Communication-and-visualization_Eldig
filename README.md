@@ -100,7 +100,13 @@ python genTables.py [user] [password] [domain] [name]
 ```
 
 ## Final Step: Publish data and view it online
-Now we have configured the database and the webserver. The next step is to run the python script for publishing the readings to the database and view them in the browser. Log in to the webpage by typing `[domain]` in the adress feild and signup/login to access the main page. Run the python file and watch the data getting displayed on the page.
+Now we have configured the database and the webserver. The next step is to run the python script for publishing the readings to the database and view them in the browser. Log in to the webpage by typing `[domain]` in the adress feild and signup/login to access the main page.
+*********
+To access the webpage from another device on the same local network, type the command `hostname -I`
+*********
+
+
+Run the python file and watch the data getting displayed on the page.
 
 ```
 python publishData.py [user] [password] [domain] [name]
