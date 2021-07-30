@@ -11,7 +11,7 @@ There are four important components:
 ## Step 1: Update and upgrade packages
 
 ```
-sudo apt update
+sudo apt-get update
 sudo apt upgrade
 ```
 
@@ -25,6 +25,14 @@ Some flavours of linux require the user to actually start the server, which can 
 ```
 sudo service apache2 start
 ```
+
+If you receive an error message `(98) Address already in use: make_sock: could not bind to address 0.0.0.0:80`, then do the following:
+
+```
+sudo netstat -ltnp | grep: 80
+sudo kill -9 [number]
+```
+Where `[number]` is the number in line `tcp ...... [number]/apache`
 
 The server is now accessible through a browser by typing `localhost` in the adress field, or by going to the directory through the following command ``` cd /var/www/html ```
 
