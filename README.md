@@ -38,7 +38,7 @@ The server is now accessible through a browser by typing `localhost` in the adre
 
 
 ### Create a virtual host
-In order to hook the IP adress of the local web oage to a specific folder, we can create a **virtual host**.
+In order to hook the IP adress of the local web page to a specific folder, we can create a **virtual host**.
 This is easily done through a bash script created by Alecaddd. In order to download and ready the file, type the following
 ```
 cd /usr/local/bin
