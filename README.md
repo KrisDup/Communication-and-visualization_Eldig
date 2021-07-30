@@ -60,7 +60,7 @@ sudo mv Communication-and-visualization_Eldig [domain]
 NOTE THAT THE REST OF THE COMMANDS ARE EXECUTED WHILE INSIDE THE `/var/www/[domain]` DIRECTORY.
 Change the directory 
 ```
-cd var/www/[domain]
+cd /var/www/[domain]
 ```
 **********
 Now, the page should be ready
