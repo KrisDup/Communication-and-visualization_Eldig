@@ -28,21 +28,64 @@ sudo service apache2 start
 
 The server is now accessible through a browser by typing `localhost` in the adress field, or by going to the directory through the following command ``` cd /var/www/html ```
 
+
+### Create a virtual host
+In order to hook the IP adress of the local web oage to a specific folder, we can create a **virtual host**.
+This is easily done through a bash script created by Alecaddd. In order to download and ready the file, type the following
+```
+cd /usr/local/bin
+sudo wget -O virtualhost https://raw.githubusercontent.com/RoverWire/virtualhost/master/virtualhost.sh
+sudo chmod +x virtualhost
+```
+To create a VH, type `sudo virtualhost [create | delete] [domain] [optional host_dir]`. Note that domain is the same as the server name. A directory with the same name as `[domain]` was created at `var/www/[domain]`. We can delete this now, but remember the domain name for later. Command for delete
+```
+sudo rmdir var/www/[domain]
+```
+
 ### Clone repository
 First do 
 ```
 cd /var/www
 ```
-
 Inside the www directory, clone this git repository:
 ```
 git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
 ```
+Finally we need to change the name of the cloned repository to the domain name used above, like this:
+```
+sudo mv Communication-and-visualization_Eldig [domain]
+```
+Now, the page should be ready
 
-### Create a virtual host
-In order to hook the IP adress of the local web oage to a specific folder, we can create a **virtual host**.
+## Step 3: Create the database
 
+First install MariaDB.
+```
+sudo apt install mariadb-server
+```
+Next we need to ecure the MySQL server.  Run the following command, and make a password for your user
 
+```
+sudo mysql_secure_installation
+```
+
+Now the database can be accessed through `mysql -u [user] -p`, or through `sudo mysql -u root -p` which does not require a password. There are no users registered initially, so we need to create it.
+After logging into mysql with the above command, we can start by creating a database and assign a user to that database. Type
+```
+CREATE DATABASE [name];
+CREATE USER '[user]'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON [name].* TO '[user]'@'localhost' 
+```
+
+In order to initialize the database with the needed tables, we can run a python script that generates the needed tables. Before we can execute that file, it you need to install a mariadb connector for python
+```
+pip3 install mariadb
+```
+Inside the `var/www/[domain]` directory, run the following
+
+```
+python genTables []
+```
 
 
 
