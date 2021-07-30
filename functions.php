@@ -1,7 +1,7 @@
 <?php
 
+//Function to check if the user is already logged in 
 function check_login($con) {
-	
 	if(isset($_SESSION['user_id'])){
 		
 		
@@ -14,8 +14,6 @@ function check_login($con) {
 			return $user_data;
 		}
 	}
-
-
 	//Redirect to login
 	header("Location: login.php");
 	die;
@@ -24,20 +22,19 @@ function check_login($con) {
 
 //Random number function
 function random_number($amount) {
-
 	$temp = "";
-	
 	//Check to see if amount is too short	
 	if($amount < 5) {
 		$amount = 5;	
 	}
-	
 	//fill array
 	for ($x = 0; $x <= $amount; $x++){
 		$temp .= rand(1, 9);	
 	}
-	
 	return $temp; 	
 }
 
+
 ?>
+
+

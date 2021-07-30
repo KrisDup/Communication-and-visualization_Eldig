@@ -9,10 +9,9 @@ session_start();
 		$u_name = "kingzaiz1";
 	}
 	else {
-		$u_name = substr($user_data['user_name'], 7);	
+		$u_name = $user_data['user_name'];	
 	}
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -57,31 +56,26 @@ session_start();
 	}
 	
 	</style>
-	
 	<div id="box">
-	
 	<h1><center>Overview for group<span style="color: white;"> <?php echo $u_name;?></span></center></h1>
-	
 	<br>
 	<center><input id="button" type="submit" value="LOGOUT", onclick="location.href='logout.php';"></center><br><br>
-	
-
+	<div id = 'Power Input'></div>
+	<div id = 'Charge'></div>
+	<div id = 'Battery Temperature'></div>
+	<div id = 'Battery Voltage'></div>
+	<div id = 'Battery Current'></div>
+	<div id = 'IO Voltage'></div>
+	<div id = 'IO Current'></div>
 	<div id = 'Temperature'></div>
-	<div id = 'Current'></div>
-	<div id = 'Voltage'></div>
 	
 	<!--Import the plotting functions -->
 	<script src = "plotting.js"></script>
-	
 	<script type="text/javascript" >
-		main();
+		var group= '<?php echo $u_name; ?>';
+		main(group);
 	</script>
 	
-	
-	<p>Suggestions: <span id="output" style="font-weigh:bold"></span></p>	
-
-	
-	</div>
-	
+	</div>	
 </body>
 </html>

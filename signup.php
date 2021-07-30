@@ -17,13 +17,22 @@ session_start();
 			//generate random number for user_id. This comes from a random number function defined in functions.php			
 			
 			//HUUUSK DENNEEEE!!!!!			
-			$user_id = random_number(15);
-			//Save to database
-			$query = "insert into login (user_id, user_name, password) values('$user_id', '$user_name', '$password')";
-			mysqli_query($connection, $query);
 			
-			header("Location: login.php");		
-			die;
+			$query_temp = "SELECT user_name FROM login WHERE user_name='{$user_name}'";
+			$result = mysqli_query($connection, $query_temp);
+			if (mysqli_num_rows($result) == 0){
+				$user_id = random_number(15);
+				//Save to database
+				$query = "insert into login (user_id, user_name, password) values('$user_id', '$user_name', '$password')";
+				mysqli_query($connection, $query);
+				$query_create = "CREATE TABLE {$user_name} (power_input VARCHAR(20), charge INT, battery_temp INT, bat_v FLOAT(2), bat_i FLOAT(2), io_v FLOAT(2), io_c FLOAT(2), temperature FLOAT(2), date TIMESTAMP PRIMARY KEY)";
+				mysqli_query($connection, $query_create);
+				header("Location: login.php");		
+				die;
+			}
+			else {
+				echo "Username already exists!!!";			
+			}
 		}
 		else {
 			echo "Username can not contain numbers or be blank. Try again";		
