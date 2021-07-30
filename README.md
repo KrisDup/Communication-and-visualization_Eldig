@@ -64,10 +64,20 @@ Inside the www directory, clone this git repository: (Requires login with userna
 ```
 sudo git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
 ```
-Finally we need to change the name of the cloned repository to the domain name used above, like this:
+We need to change the name of the cloned repository to the domain name used above, like this:
 ```
 sudo mv Communication-and-visualization_Eldig [domain]
 ```
+Finally, we need to change the `DocumentRoot` directory of apache2 sites conf file to `[domain]`
+
+```
+cd /etc/apache2/sites-available/000-default.conf
+```
+Change the line `DocumentRoot` to `DocumentRoot /war/www/[domain]`
+
+
+
+
 **********
 NOTE THAT THE REST OF THE COMMANDS ARE EXECUTED WHILE INSIDE THE `/var/www/[domain]` DIRECTORY.
 Change the directory 
