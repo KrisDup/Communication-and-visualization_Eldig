@@ -37,7 +37,11 @@ cd /usr/local/bin
 sudo wget -O virtualhost https://raw.githubusercontent.com/RoverWire/virtualhost/master/virtualhost.sh
 sudo chmod +x virtualhost
 ```
-To create a VH, type `sudo virtualhost [create | delete] [domain] [optional host_dir]`. Note that domain is the same as the server name. A directory with the same name as `[domain]` was created at `var/www/[domain]`. We can delete this now, but remember the domain name for later. Command for delete
+To create a VH, type 
+```
+sudo virtualhost [create | delete] [domain] [optional host_dir]
+```
+Note that domain is the same as the server name. A directory with the same name as `[domain]` was created at `var/www/[domain]`. We can delete this now, but remember the domain name for later. Command for delete
 ```
 sudo rmdir var/www/[domain]
 ```
