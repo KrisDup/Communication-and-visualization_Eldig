@@ -20,7 +20,7 @@ except mariadb.Error as e:
 cur = connection.cursor()
 
 
-query = f"CREATE TABLE login (id BIGINT AUTO INCREMENT, user_id BIGINT, user_name VARCHAR(50), password VARCHAR(50), date TIMESTAMP)"
+query = f"CREATE TABLE login (id BIGINT AUTO_INCREMENT, user_id BIGINT, user_name VARCHAR(50), password VARCHAR(50), date TIMESTAMP, PRIMARY KEY(id))"
 
 
 try:
