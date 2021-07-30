@@ -82,7 +82,7 @@ Change the line `DocumentRoot` to `DocumentRoot /war/www/[domain]`
 The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
 ```
 sudo nano /var/www/[domain]/connection.php
-
+```
 
 
 **********
