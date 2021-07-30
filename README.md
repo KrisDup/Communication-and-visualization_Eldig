@@ -47,6 +47,7 @@ First do
 ```
 cd /var/www
 ```
+
 Inside the www directory, clone this git repository:
 ```
 git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
@@ -55,6 +56,13 @@ Finally we need to change the name of the cloned repository to the domain name u
 ```
 sudo mv Communication-and-visualization_Eldig [domain]
 ```
+**********
+NOTE THAT THE REST OF THE COMMANDS ARE EXECUTED WHILE INSIDE THE `/var/www/[domain]` DIRECTORY.
+Change the directory 
+```
+cd var/www/[domain]
+```
+**********
 Now, the page should be ready
 
 ## Step 3: Create the database
@@ -81,11 +89,21 @@ In order to initialize the database with the needed tables, we can run a python 
 ```
 pip3 install mariadb
 ```
-Inside the `var/www/[domain]` directory, run the following
+Inside the `var/www/[domain]` directory, run the following command. Note that `[user]` is the mysql username while `[name]` is the name of the database.
 
 ```
-python genTables []
+python genTables.py [user] [password] [domain] [name]
 ```
+
+Now we have configured the database and the webserver. The next step is to run the python script for publishing the readings to the database and view them in the browser. Log in to the webpage by typing `[domain]` in the adress feild and signup/login to access the main page. Run the python file and watch the data getting displayed on the page.
+
+```
+python publishData.py [user] [password] [domain] [name]
+```
+
+
+
+
 
 
 
