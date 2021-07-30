@@ -60,9 +60,9 @@ First do
 cd /var/www
 ```
 
-Inside the www directory, clone this git repository:
+Inside the www directory, clone this git repository: (Requires login with username and password)
 ```
-git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
+sudo git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
 ```
 Finally we need to change the name of the cloned repository to the domain name used above, like this:
 ```
