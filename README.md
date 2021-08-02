@@ -114,7 +114,7 @@ CREATE USER '[user]'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON [name].* TO '[user]'@'localhost' 
 ```
 
-The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
+The file `connection.php` needs to be modified with the correct username [user] , password [password], servername [domain] and database [name] name
 ```
 sudo nano /var/www/[domain]/connection.php
 ```
