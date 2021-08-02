@@ -79,7 +79,7 @@ Finally, we need to change the `DocumentRoot` directory of apache2 sites conf fi
 cd /etc/apache2/sites-available
 sudo nano 000-default.conf
 ```
-Change the line `DocumentRoot` to `DocumentRoot /war/www/[domain]`
+Change the line `DocumentRoot` to `DocumentRoot /var/www/[domain]`
 
 The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
 ```
