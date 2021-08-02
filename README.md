@@ -3,8 +3,11 @@
 
 There are four important components: 
 **Linux**, which is the operating system hosting the webservers (This one is already installed, since RPi runs linux)
-**Apache**, an open-source web server software for linux
-**MySQL**, the relational database management system
+
+**Apache**, an open-source web server software for linux.
+
+**MySQL**, the relational database management system.
+
 **PHP**, a programing language used on server side to create dynamic pages
 
 
