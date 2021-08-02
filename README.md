@@ -84,11 +84,6 @@ sudo nano 000-default.conf
 ```
 Change the line `DocumentRoot` to `DocumentRoot /var/www/[domain]`
 
-The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
-```
-sudo nano /var/www/[domain]/connection.php
-```
-
 
 **********
 NOTE THAT THE REST OF THE COMMANDS ARE EXECUTED WHILE INSIDE THE `/var/www/[domain]` DIRECTORY.
@@ -117,6 +112,11 @@ After logging into mysql with the above command, we can start by creating a data
 CREATE DATABASE [name];
 CREATE USER '[user]'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON [name].* TO '[user]'@'localhost' 
+```
+
+The file `connection.php` needs to be modified with the correct username, password, servername (host) and database name
+```
+sudo nano /var/www/[domain]/connection.php
 ```
 
 In order to initialize the database with the needed tables, we can run a python script that generates the needed tables. Before we can execute that file, it you need to install a mariadb connector for python
