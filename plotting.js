@@ -98,7 +98,9 @@ function extend_plot(result, parameter) {
 		array_data.push(result[0]);
 		array_data.shift();
 		for (const param in parameter) {
-			Plotly.extendTraces(parameter[param].name, {y:[[parseInt(result[0][parameter[param].values])]], x: [[result[0][8]]]}, [0]);
+			if (parameter[param].values === 0){var temp = String(result[0][parameter[param].values]);}
+			else {var temp = parseInt(result[0][parameter[param].values]);}
+			Plotly.extendTraces(parameter[param].name, {y:[[temp]], x: [[result[0][8]]]}, [0]);
 		}
 	}
 }
