@@ -123,7 +123,7 @@ In order to initialize the database with the needed tables, we can run a python 
 ```
 pip3 install mariadb
 ```
-Inside the `var/www/[domain]` directory, run the following command. Note that `[user]` is the mysql username while `[name]` is the name of the database. Note that `[table name]` is the same as the username used when signing up for the webpage
+Inside the `var/www/[domain]` directory, run the following command. Note that `[user]` is the mysql username while `[name]` is the name of the database.
 
 ```
 python genTables.py [user] [password] [domain] [name]
@@ -136,7 +136,7 @@ To access the webpage from another device on the same local network, type the co
 *********
 
 
-Run the python file and watch the data getting displayed on the page.
+Run the python file and watch the data getting displayed on the page. Note that `[table name]` is the same as the username used when signing up for the webpage.
 
 ```
 python publishData.py [user] [password] [domain] [name] [table name]
