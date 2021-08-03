@@ -12,10 +12,10 @@ pijuice = pijuice.PiJuice(1, 0x14)
 
 #Connection variables for database. Fill in later. ["user", "password", "host", "port", "database"]
 #THIS SHOULD PREFERABLY BE COLLECTED FROM THE SYSTEM SO IT DOES NOT INCLUDE PASSWORD IN PLAIN TEXT
-con_var = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]]
+con_var = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
 
 #Table name for each group. Fill in later
-table_name = "data_gruppe11"
+table_name = con_var[4]
 
 #Connection
 try:
