@@ -126,7 +126,7 @@ pip3 install mariadb
 Inside the `var/www/[domain]` directory, run the following command. Note that `[user]` is the mysql username while `[name]` is the name of the database. Note that `[table name]` is the same as the username used when signing up for the webpage
 
 ```
-python genTables.py [user] [password] [domain] [name] [table name]
+python genTables.py [user] [password] [domain] [name]
 ```
 
 ## Final Step: Publish data and view it online
@@ -139,7 +139,7 @@ To access the webpage from another device on the same local network, type the co
 Run the python file and watch the data getting displayed on the page.
 
 ```
-python publishData.py [user] [password] [domain] [name]
+python publishData.py [user] [password] [domain] [name] [table name]
 ```
 
 
