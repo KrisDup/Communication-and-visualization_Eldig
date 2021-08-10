@@ -7,23 +7,25 @@ import time
 #from tempmain import return_temp
 import pijuice
 
-
+#Initialize PiJuoce object
 pijuice = pijuice.PiJuice(1, 0x14)
 
-#Connection variables for database. Fill in later. ["user", "password", "host", "port", "database"]
-#THIS SHOULD PREFERABLY BE COLLECTED FROM THE SYSTEM SO IT DOES NOT INCLUDE PASSWORD IN PLAIN TEXT
-con_var = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
 
-#Table name for each group. Fill in later
-table_name = con_var[4]
+#Insert Username and Password below. Remember to put them between the quotation marks
+
+user_name = ""
+password = ""
+
+
+table_name = user_name
 
 #Connection
 try:
-    connection = mariadb.connect(user=con_var[0],
-                                 password=con_var[1],
-                                 host=con_var[2],
+    connection = mariadb.connect(user=user_name,
+                                 password=password,
+                                 host="16.170.110.98",
                                  port=3306,
-                                 database=con_var[3])
+                                 database="teknostart")
     
     #MAKE SURE THIS IS TRUE; IF NOT THEN IT WONT INSERT INTO TABLES
     connection.autocommit = True
