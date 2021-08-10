@@ -18,7 +18,7 @@ Neste steg er å laste ned `publishData.py`. Denne filen henter først ut sensor
 sudo git clone https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
 ```
 
-I folderen `Communication-and-visualization_Eldig` vil dere finne en del forskjellige filer. Dere skal bare bry dere on filene som ligger i folderen `ELDIG`. For å komme inn i denne folderen, skriv følgende 
+I folderen `Communication-and-visualization_Eldig` vil dere finne en del forskjellige filer. Dere skal bare bry dere om filene som ligger i folderen `ELDIG`. For å komme inn i denne folderen, skriv følgende 
 
 ```
 cd Communication-and-visualization_Eldig/ELDIG
