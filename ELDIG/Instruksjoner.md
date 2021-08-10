@@ -14,5 +14,5 @@ Her trykker dere på `Signup here!` og lager deretter passord og brukernavn. Log
 Neste steg er å laste ned `publishData.py`. Denne filen henter først ut sensor data fra Pi og PiJuice, for å så lagre de i en database lokalisert i skyen. Denne filen, samt en python fil for å hente ut temperatur målinger, kan lastes ned ved å kjøre følgende kode:
 
 ```
-git clone -b Marthe https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
+git clone -b ELDIG https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
 ```
