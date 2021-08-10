@@ -13,11 +13,6 @@ session_start();
 		
 		//Here you can add more constraints on the username
 		if (!empty($user_name) && !empty($password)){
-			
-			//generate random number for user_id. This comes from a random number function defined in functions.php			
-			
-			//HUUUSK DENNEEEE!!!!!			
-			
 			$query_temp = "SELECT user_name FROM login WHERE user_name='{$user_name}'";
 			$result = mysqli_query($connection, $query_temp);
 			if (mysqli_num_rows($result) == 0){
