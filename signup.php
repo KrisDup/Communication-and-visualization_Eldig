@@ -30,7 +30,8 @@ session_start();
 				$user_query = "CREATE USER '{€user_name}'@'%' IDENTIFIED BY '{$password}'";
 				mysqli_query($connection, $user_query);
 				$grant_query = "GRANT ALL ON teknostart.{$user_name} TO  '{$user_name}'@'%' IDENTIFIED BY '{$password}' WITH GRANT OPTION";
-				mysqli_query($connection, $grant_query)
+				mysqli_query($connection, $grant_query);
+				mysqli_query($connection, "FLUSH PRIVILEGES");
 				header("Location: login.php");		
 				die;
 			}
