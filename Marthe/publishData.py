@@ -4,7 +4,7 @@
 import mariadb
 import sys
 import time
-#from tempmain import return_temp
+from tempmain import return_temp
 import pijuice
 
 #Initialize PiJuoce object
@@ -46,7 +46,7 @@ def retrivedata(pijuice):
     BatC=pijuice.status.GetBatteryCurrent()['data'] #arraynr. 4
     IOV=pijuice.status.GetIoVoltage()['data'] #arraynr. 5
     IOC=pijuice.status.GetIoCurrent()['data'] #arraynr. 6
-    Temp =  30;#return_temp() #arraynr. 7
+    Temp = return_temp() #arraynr. 7
     DataArray=[Powerinput,Charge,Batterytemp,BatV,BatC,IOV,IOC, Temp]
     return DataArray
 
