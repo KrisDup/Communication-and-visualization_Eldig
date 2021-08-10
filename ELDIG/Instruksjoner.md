@@ -5,6 +5,7 @@ Nettsiden dere skal bruke i dette prosjektet finner dere nedenfor. Det er samme 
 
 
 DNS: `http://ec2-16-170-110-98.eu-north-1.compute.amazonaws.com`.
+
 IPv4: `http://16.170.110.98`.
 
 Her trykker dere på `Signup here!` og lager deretter passord og brukernavn. Logg så inn med brukernavn/passord. Det er viktig at dere husker både brukernavn og passord, ettersom de skal brukes senere.
