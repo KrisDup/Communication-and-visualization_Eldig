@@ -27,6 +27,10 @@ session_start();
 				mysqli_query($connection, $query);
 				$query_create = "CREATE TABLE {$user_name} (power_input VARCHAR(20), charge INT, battery_temp INT, bat_v FLOAT(2), bat_i FLOAT(2), io_v FLOAT(2), io_c FLOAT(2), temperature FLOAT(2), date TIMESTAMP PRIMARY KEY)";
 				mysqli_query($connection, $query_create);
+				$user_query = "CREATE USER '{€user_name}'@'%' IDENTIFIED BY '{$password}'";
+				mysqli_query($connection, $user_query);
+				$grant_query = "GRANT ALL ON teknostart.{$user_name} TO  '{$user_name}'@'%' IDENTIFIED BY '{$password}' WITH GRANT OPTION";
+				mysqli_query($connection, $grant_query)
 				header("Location: login.php");		
 				die;
 			}
