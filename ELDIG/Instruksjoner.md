@@ -31,6 +31,15 @@ sudo nano publishData.py
 
 Bla ned til linjene der det står `user_name` og `password`. Her fyller dere inn brukernavn og passord som dere lagde tidligere. Pass på å fylle inn mellom apostrofene (""). Trykk så `Ctrl+X` og `Enter`.
 
+Før dere kan kjøre filen, må dere installere et python biliotek for å muligjøre tilkobling til MariaDB databaser. Dette bibliteket installeres ved hjelp av `pip`, en pakkeleder som brukes til å laste ned forskjellige biblioteker. For å laste ned biblioteket, kjør disse kommandoene
+
+```
+sudo apt-get update 
+sudo apt-get upgrade
+sudo apt-get install python3-pip
+pip3 install mariadb
+```
+
 
 Nå kan dere kjøre filen, og følge med på nettsiden for å se verdiene 
 
