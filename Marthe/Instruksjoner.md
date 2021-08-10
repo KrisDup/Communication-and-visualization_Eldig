@@ -10,4 +10,9 @@ IPv4: `http://16.170.110.98`.
 Her trykker dere på `Signup here!` og lager deretter passord og brukernavn. Logg så inn med brukernavn/passord. Det er viktig at dere husker både brukernavn og passord, ettersom de skal brukes senere.
 
 
-Neste steg er å laste ned `publishData.py`. Denne filen henter først ut sensor data fra Pi og PiJuice, for å så lagre de i en database lokalisert i skyen. Du kan laste ned filen slik:
+
+Neste steg er å laste ned `publishData.py`. Denne filen henter først ut sensor data fra Pi og PiJuice, for å så lagre de i en database lokalisert i skyen. Denne filen, samt en python fil for å hente ut temperatur målinger, kan lastes ned ved å kjøre følgende kode:
+
+```
+git clone -b Marthe https://github.com/wealthystudent/Communication-and-visualization_Eldig.git
+```
