@@ -22,10 +22,10 @@ Create an IAM user in the AWS account and use that to access the account instead
 ### Create EC2 Instance
 The EC2 instance is a virtual machine that you spin up in the cloud
 
-In the *Console*, search for *EC2*.
-Then, click *Launch instance*
-Give the instance a name
-Change *Instance Type* (optional, only required if expecting high loads on the server)
+In the *Console*, search for *EC2*.</b>
+Then, click *Launch instance*</b>
+Give the instance a name</b>
+Change *Instance Type* (optional, only required if expecting high loads on the server)</b>
 Under *Key pair(login)*, select *Create new key pair* amd use the default settings (make sure it is a .pem file). Make sure to download the contents of the keypair, as we need it to SSH into our virtual machine
 Click *Launch instance*
 Wait for the instance to spin up, then select it and chose *Connect*. Here you can choose to connect via SSH client, which explains how to SSH into your instance.
