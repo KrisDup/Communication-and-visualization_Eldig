@@ -11,6 +11,28 @@ There are four important components:
 **PHP**, a programing language used on server side to create dynamic pages
 
 
+## Step 0: Create environment for server
+
+When starting a server, we have to decide where to run it. It could be on a Raspberry Pi, your local computer/hardware or in the cloud. This section describes the process of starting a virtual machine in the AWS Cloud. 
+
+### Create AWS Account
+### Create IAM user for access to account (Optional BUT RECCOMENDED)
+Create an IAM user in the AWS account and use that to access the account instead of the root user login. 
+
+### Create EC2 Instance
+The EC2 instance is a virtual machine that you spin up in the cloud
+
+In the *Console*, search for *EC2*.
+Then, click *Launch instance*
+Give the instance a name
+Change *Instance Type* (optional, only required if expecting high loads on the server)
+Under *Key pair(login)*, select *Create new key pair* amd use the default settings (make sure it is a .pem file). Make sure to download the contents of the keypair, as we need it to SSH into our virtual machine
+Click *Launch instance*
+Wait for the instance to spin up, then select it and chose *Connect*. Here you can choose to connect via SSH client, which explains how to SSH into your instance.
+
+Now the instance is created, and we can start to spin up our web-server
+
+
 ## Step 1: Update and upgrade packages
 
 ```
