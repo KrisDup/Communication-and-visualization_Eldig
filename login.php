@@ -37,17 +37,25 @@ session_start();
 <head>
 	<title>Login</title>
 </head>
-<body style="background-color: powderblue;">
+<body>
 
 	<style type="text/css">
 	
+	#myVideo {
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  min-width: 100%;
+		  min-height: 100%;
+		  z-index: -1
+	}
 	#text{
 		
 		height: 50px;
 		border-radius: 5px;
 		padding: 4px;
 		border: solid thin #aaa;
-		border-color: darkslategray;
+		border-color: black;
 		width: 100%;
 		margin: auto;	
 	}
@@ -58,7 +66,7 @@ session_start();
 		width: 250px;
 		color: white;
 		border-radius: 5px;
-		background-color: firebrick;
+		background-color: peru;
 		border: none #aaa;
 		font-size: 20px;
 		width: 100%;
@@ -74,15 +82,24 @@ session_start();
 	
 	</style>
 	
+	<div>
+		<video autoplay muted loop id="myVideo">
+			<source src="Elektrifisering og digitalisering _ NTNU.mp4" type="video/mp4">
+		</video>
+	</div>
+	
+	
 	<div id="box">
 		<form method="post">
-			<div style="font-size: 35px;margin: 10px;color: darkslategray;text-align: center;">PLEASE LOGIN</div><br>
-			<input id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
+			<div style="font-size: 35px;margin: 10px;color:darkgrey;text-align: center; border-color: black;border-radius: 5px">PLEASE LOGIN</div><br>
+			<input id="text" type="text" name="user_name" placeholder="Username"><br><br>
+			<input id="text" type="password" name="password" placeholder="Password"><br><br>
 					
 			<input id="button" type="submit" value="LOGIN"><br><br>
 			
-			<a href="signup.php">Signup here! </a><br><br>
+			
+			<a href="signup.php" style="color: white" >Signup here! </a><br><br>
+		
 		</form>	
 	
 	</div>
