@@ -20,9 +20,19 @@ session_start();
 	<script type = 'text/javascript'src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 	
 </head>
-<body style="background-color: powderblue;">
+<body>
 
 	<style type="text/css">
+	
+	#myVideo {
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  min-width: 100%;
+		  min-height: 100%;
+		  z-index: -1
+	}
+	
 	
 	#text{
 		
@@ -52,12 +62,19 @@ session_start();
 		margin: auto;
 		width: 90%;
 		padding: 50px;
-		background-color: powderblue;
+		
 	}
 	
 	</style>
+	
+	<div>
+		<video autoplay muted loop id="myVideo">
+			<source src="Elektrifisering og digitalisering _ NTNU.mp4" type="video/mp4">
+		</video>
+	</div>
+	
 	<div id="box">
-	<h1><center>Overview for group<span style="color: white;"> <?php echo $u_name;?></span></center></h1>
+	<h1 style="color:lightgrey"><center>Overview for group <span> <?php echo $u_name;?></span></center></h1>
 	<br>
 	<center><input id="button" type="submit" value="LOGOUT", onclick="location.href='logout.php';"></center><br><br>
 	<div id = 'Power Input'></div>
