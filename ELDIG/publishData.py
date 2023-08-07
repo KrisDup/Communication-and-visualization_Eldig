@@ -41,35 +41,35 @@ def retrivedata(pijuice):
     try:
         Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
     except:
-        Powerinput = Powerinput if Powerinput else 0
+        Powerinput = Powerinput or 0
     try:
         Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
     except:
-        Charge = Charge if Charge else 0
+        Charge = Charge or 0
     try:
         Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
     except:
-        Batterytemp = Batterytemp if Batterytemp else 0
+        Batterytemp = Batterytemp or 0
     try:
         BatV = pijuice.status.GetBatteryVoltage()['data']  # arraynr. 3
     except:
-        BatV = BatV if BatV else 0
+        BatV = BatV or 0
     try:
         BatC = pijuice.status.GetBatteryCurrent()['data']  # arraynr. 4
     except:
-        BatC = BatC if BatC else 0
+        BatC = BatC or 0
     try:
         IOV = pijuice.status.GetIoVoltage()['data']  # arraynr. 5
     except:
-        IOV = IOV if IOV else 0
+        IOV = IOV or 0
     try:
         IOC = pijuice.status.GetIoCurrent()['data']  # arraynr. 6
     except:
-        IOC = IOC if IOC else 0
+        IOC = IOC or 0
     try:
         Temp = return_temp()  # arraynr. 7
     except:
-        Temp = Temp if Temp else 0
+        Temp = Temp or 0
     DataArray = [Powerinput, Charge, Batterytemp, BatV, BatC, IOV, IOC, Temp]
     return DataArray
 
