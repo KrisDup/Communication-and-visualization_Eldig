@@ -39,49 +39,34 @@ cur = connection.cursor()
 
 def retrivedata(pijuice):
     try:
-        Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
+        status = pijuice.status.GetStatus()["data"]
     except:
-        if Powerinput == None:Powerinput=0
-    try:
-        Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
-    except:
-        if Charge == None:Charge=0
-    try:
-        Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
-    except:
-        if Batterytemp == None:Batterytemp=0
-    try:
-        BatV = pijuice.status.GetBatteryVoltage()['data']  # arraynr. 3
-    except:
-        if BatV == None:BatV=0
-    try:
-        BatC = pijuice.status.GetBatteryCurrent()['data']  # arraynr. 4
-    except:
-        if Powerinput == None:BatC=0
-    try:
-        IOV = pijuice.status.GetIoVoltage()['data']  # arraynr. 5
-    except:
-        if IOV == None:IOV=0
-    try:
-        IOC = pijuice.status.GetIoCurrent()['data']  # arraynr. 6
-    except:
-        if IOC == None:IOC=0
-    try:
-        Temp = return_temp()  # arraynr. 7
-    except:
-        if Temp == None:Temp=0
+        return None
+    
+    Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
+    Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
+    Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
+    BatV = pijuice.status.GetBatteryVoltage()['data']  # arraynr. 3
+    BatC = pijuice.status.GetBatteryCurrent()['data']  # arraynr. 4
+    IOV = pijuice.status.GetIoVoltage()['data']  # arraynr. 5
+    IOC = pijuice.status.GetIoCurrent()['data']  # arraynr. 6
+    Temp = return_temp()  # arraynr. 7
+
     DataArray = [Powerinput, Charge, Batterytemp, BatV, BatC, IOV, IOC, Temp]
     return DataArray
 
 
 def publishData(timeframe, cursor, pijuice):
     while (True):
-        temp_arr = retrivedata(pijuice)
-        query = f"INSERT INTO ELDIts.{table_name} (power_input, charge, battery_temp, bat_v, bat_i, io_v, io_c, temperature) VALUES ('{temp_arr[0]}',{temp_arr[1]},{temp_arr[2]},{temp_arr[3]},{temp_arr[4]},{temp_arr[5]},{temp_arr[6]},{temp_arr[7]})"
         try:
-            cursor.execute(query)
-        except mariadb.Error as e:
-            print(f"Error: {e}")
+            temp_arr = retrivedata(pijuice)
+            query = f"INSERT INTO ELDIts.{table_name} (power_input, charge, battery_temp, bat_v, bat_i, io_v, io_c, temperature) VALUES ('{temp_arr[0]}',{temp_arr[1]},{temp_arr[2]},{temp_arr[3]},{temp_arr[4]},{temp_arr[5]},{temp_arr[6]},{temp_arr[7]})"
+            try:
+                cursor.execute(query)
+            except mariadb.Error as e:
+                print(f"Error: {e}")
+        except:
+            pass
         time.sleep(timeframe)
 
 
