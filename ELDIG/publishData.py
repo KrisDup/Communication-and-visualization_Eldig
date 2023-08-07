@@ -38,15 +38,42 @@ cur = connection.cursor()
 
 
 def retrivedata(pijuice):
-    Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
-    Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
-    Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
-    BatV = pijuice.status.GetBatteryVoltage()['data']  # arraynr. 3
-    BatC = pijuice.status.GetBatteryCurrent()['data']  # arraynr. 4
-    IOV = pijuice.status.GetIoVoltage()['data']  # arraynr. 5
-    IOC = pijuice.status.GetIoCurrent()['data']  # arraynr. 6
-    Temp = return_temp()  # arraynr. 7
-    DataArray = [Powerinput, Charge, Batterytemp, BatV, BatC, IOV, IOC, Temp]
+    try:
+        Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
+    except:
+        pass
+    try:
+        Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
+    except:
+        pass
+    try:
+        Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
+    except:
+        pass
+    try:
+        BatV = pijuice.status.GetBatteryVoltage()['data']  # arraynr. 3
+    except:
+        pass
+    try:
+        BatC = pijuice.status.GetBatteryCurrent()['data']  # arraynr. 4
+    except:
+        pass
+    try:
+        IOV = pijuice.status.GetIoVoltage()['data']  # arraynr. 5
+    except:
+        pass
+    try:
+        IOC = pijuice.status.GetIoCurrent()['data']  # arraynr. 6
+    except:
+        pass
+    try:
+        Temp = return_temp()  # arraynr. 7
+    except:
+        pass
+    try:
+        DataArray = [Powerinput, Charge, Batterytemp, BatV, BatC, IOV, IOC, Temp]
+    except:
+        pass
     return DataArray
 
 
