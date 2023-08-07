@@ -56,8 +56,15 @@ def publishData(timeframe, cursor, pijuice):
             cursor.execute(query)
         except mariadb.Error as e:
             print(f"Error: {e}")
+<<<<<<< HEAD
         time.sleep(timeframe)  
         
 publishData(1, cur, pijuice)
 
 
+=======
+        time.sleep(timeframe)
+
+
+publishData(1, cur, pijuice)
+>>>>>>> 0e447780f05c2168f0edccaec79c3451e7b4db73
