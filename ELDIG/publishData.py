@@ -38,11 +38,6 @@ cur = connection.cursor()
 
 
 def retrivedata(pijuice):
-    try:
-        status = pijuice.status.GetStatus()["data"]
-    except:
-        return None
-    
     Powerinput = pijuice.status.GetStatus()['data'].get('powerInput')  # arraynr. 0
     Charge = pijuice.status.GetChargeLevel()['data']  # arraynr. 1
     Batterytemp = pijuice.status.GetBatteryTemperature()['data']  # arraynr. 2
